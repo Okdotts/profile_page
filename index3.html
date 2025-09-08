@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog profile</title>
+    <link rel="stylesheet" href="styles3.css" />
+    <!--<link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+      <div class="logo">MySite</div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#rating">Rate Me</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- MAIN PROFILE SECTION -->
+    <main>
+      <section class="main" id="home">
+        <div class="detail">
+          <h1>Hi, I'm <span class="highlight">[Your Name]</span></h1>
+          <p>
+            Welcome to my website! I am learning to code and this is my summer
+            holiday project🚀
+          </p>
+          <div class="social">
+            <!-- Social Media Links -->
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+
+            <!-- <a href="#"
+              ><span><i class="bx bxl-facebook-square"></i></span
+            ></a>
+            <a href="#"
+              ><span><i class="bx bxl-instagram-alt"></i></span
+            ></a>
+            <a href="#"
+              ><span><i class="bx bxl-linkedin-square"></i></span
+            ></a>
+            <a href="#"
+              ><span><i class="bx bxl-github"></i></span
+            ></a>-->
+          </div>
+        </div>
+        <div class="images">
+          <img src="img/Capture.JPG" alt="Profile Picture" />
+        </div>
+      </section>
+
+      <!-- OTHER PAgES-->
+      <section id="pages">
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+          <h2>About Me</h2>
+          <p>
+            Hello! My name is [Student Name]. I love coding, playing games, and
+            reading books. This page is all about me and my projects ✨.
+          </p>
+        </section>
+
+        <!-- BLOGS SECTION -->
+        <section id="blogs" class="section alternate">
+          <h2>My Blogs</h2>
+          <article>
+            <h3>🌍 My First Blog</h3>
+            <p>
+              Today I learned how to build my first webpage using HTML, CSS and
+              JavaScript!
+            </p>
+          </article>
+          <article>
+            <h3>🎮 My Favorite Game</h3>
+            <p>
+              I love playing Minecraft because it lets me be creative with
+              building things.
+            </p>
+          </article>
+        </section>
+
+        <!-- Fun Feature -->
+        <section id="fun" class="section">
+          <h2>🎉 Fun Corner</h2>
+          <button onclick="tellJoke()">Tell me a Joke</button>
+          <p id="joke"></p>
+        </section>
+
+        <!-- Background Music -->
+        <section id="music" class="section">
+          <!--<h2>🎵 Background Music</h2>
+          <button onclick="toggleMusic()">Play / Stop Music</button>
+          <audio id="bgMusic" loop>
+            <source src="music.mp3" type="audio/mpeg" />
+            Your browser does not support audio.
+          </audio>-->
+
+          <h2>My Music Playlist 🎶</h2>
+
+          <!-- *Playlist Dropdown* -->
+
+          <select id="musicSelect" onchange="changeSong()">
+            <option value="Music/Double-Rainbow.mp3">Song 1</option>
+            <option value="Music/Double-Rainbow.mp3">Song 2</option>
+            <option value="Music/Double-Rainbow.mp3">Song 3</option>
+          </select>
+          <br />
+          <!-- *Music Player* -->
+
+          <audio id="audioPlayer" controls>
+            <source
+              id="audioSource"
+              src="Music/Double-Rainbow.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+        </section>
+
+        <!-- Theme Color Picker -->
+        <section id="theme" class="section">
+          <h2>🎨 Choose Your Theme</h2>
+          <input type="color" id="colorPicker" onchange="changeTheme()" />
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="section alternate">
+          <h2>📩 Contact Me</h2>
+          <form onsubmit="sendMessage(event)">
+            <input type="text" id="name" placeholder="Your name" required />
+            <br /><br />
+            <textarea
+              id="message"
+              placeholder="Write a message"
+              required
+            ></textarea>
+            <br /><br />
+            <button type="submit">Send</button>
+            <br /><br />
+          </form>
+          <p id="contactResult"></p>
+        </section>
+
+        <!-- RATING SECTION -->
+        <section id="rating" class="section">
+          <h2>Rate My Website</h2>
+          <p>What do you think of my website? Choose a rating below:</p>
+          <div class="rating">
+            <button id="rating1">⭐</button>
+            <button onclick="rate('👍')">👍</button>
+            <button onclick="rate('🔥')">🔥</button>
+            <button onclick="rate('😍')">😍</button>
+          </div>
+          <p id="ratingResult"></p>
+        </section>
+      </section>
+
+      <!-- ASIDE GALLERY -->
+      <aside>
+        <h2>Photo Gallery 👨‍👩‍👧‍👦</h2>
+        <hr />
+        <div class="gallery">
+          <img src="img/placeholder" alt="photos" />
+          <img src="img/placeholder" alt="photos" />
+          <img src="img/placeholder" alt="photos" />
+          <img src="img/placeholder" alt="photos" />
+        </div>
+      </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Made with ❤️ by Okey | © 2025 summer holidays@cisnetacademics</p>
+    </footer>
+
+    <script src="script3.js"></script>
+  </body>
+</html>
